@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}About {% endblock %}
+
+
+{% block css %}
+{{ super() }} 
+{% endblock %}
+
+{% block content %}
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="about-img position-relative overflow-hidden p-5 pe-0">
+                        <img class="img-fluid w-100" src="static/img/si.jpeg" alt="About Image">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <h1 class="display-5 mb-4">Aliméntate de manera saludable con los mejores</h1>
+                    <p class="mb-4">Adopta una alimentación balanceada que se adapte a tus necesidades y preferencias. Con nuestros planes personalizados, alcanzarás tus objetivos de forma saludable y efectiva.</p>
+                    <p><i class="fa fa-check text-primary me-3"></i>Planes personalizados para tus objetivos</p>
+                    <p><i class="fa fa-check text-primary me-3"></i>Recetas deliciosas y nutritivas</p>
+                    <p><i class="fa fa-check text-primary me-3"></i>Asesoramiento nutricional profesional</p>
+                    <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="#diet-plan">Ver más</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+{% endblock %}

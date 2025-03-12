@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}Dunder Miflin Alimentation Company{% endblock %}</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="{{ url_for('static', filename='img/favicon.ico') }}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Lora:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{{ url_for('static', filename='lib/animate/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    {% block css %}{% endblock %}
+    {% block head %}{% endblock %}
+
+    
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    {% block nav %}
+    <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
+        <div class="top-bar row gx-0 align-items-center d-none d-lg-flex">
+            <div class="col-lg-6 px-5 text-start">
+                <small><i
+                        class="fa fa-map-marker-alt me-2"></i><a href="https://www.google.com/maps/place/The+Office,+Dunder+Mifflin+Gift+Shop/@41.4145169,-75.6567116,21z/data=!3m1!5s0x89c4d92d412eb65d:0x63549b9a572dbead!4m6!3m5!1s0x89c4d9b2772888a7:0xeaf497df0f646a50!8m2!3d41.4144387!4d-75.6567374!16s%2Fg%2F11qpv7tlnj?entry=ttu">Managua,
+                    Nicaragua</a></small>
+                <small class="ms-4"><i class="fa fa-envelope me-2"></i>dunderalimentationcompany@gmail.com</small>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+            <a href="#" class="navbar-brand ms-4 ms-lg-0" data-bs-toggle="modal" data-bs-target="#videoModal">
+                <img src="static/img/logo.png" class="logo">
+            </a>
+            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse"
+                data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto p-4 p-lg-0">
+                    <a href="{{ url_for('home') }}" class="nav-item nav-link active">Home</a>
+                    <a href="{{ url_for('about') }}" class="nav-item nav-link">About Us</a>
+                    <a href="{{ url_for('services') }}" class="nav-item nav-link">Services</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Diet Plan</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="{{ url_for('diet_types') }}" class="dropdown-item">Tipos de dietas</a>
+                            <a href="{{ url_for('simple_diet') }}" class="dropdown-item">Dietas simple</a>
+                            <a href="{{ url_for('fitness_diet') }}" class="dropdown-item">Dieta Fitness</a>
+                        </div>
+                    </div>
+                    <a href="{{ url_for('contact') }}" class="nav-item nav-link">Contact Us</a>
+                </div>
+                <div class="d-none d-lg-flex ms-2">
+                    <div class="search">
+                        <form id="searchForm" class="d-flex">
+                            <input id="searchInput" class="form-control me-2" type="search" placeholder="Buscar sección..." aria-label="Buscar">
+                            <button id="searchButton" class="btn btn-outline-success" type="submit">
+                                <i class="fa fa-search"></i> <!-- Ícono de búsqueda -->
+                            </button>
+                        </form>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a class="btn-sm-square bg-white rounded-circle ms-3 nav-link dropdown-toggle" href="#"
+                            id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <small class="fa fa-user text-body"></small>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                            {% if not session.get('user_id') %}
+                            <a class="dropdown-item" href="{{ url_for('login') }}">Login</a>
+                            <a class="dropdown-item" href="{{ url_for('register') }}">Register</a>
+                            {% else %}
+                            <a class="dropdown-item" href="{{ url_for('logout') }}">Logout</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+     <!-- Video Modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoModalLabel">Video de Presentación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="ratio ratio-16x9">
+                        <iframe id="videoIframe" src="https://www.youtube.com/embed/ZZb5yuogfAFWR4fB" title="YouTube video" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <!-- Bootstrap JS Bundle (includes Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        var videoModal = document.getElementById('videoModal');
+        var videoIframe = document.getElementById('videoIframe');
+
+        videoModal.addEventListener('hidden.bs.modal', function (event) {
+            videoIframe.src = videoIframe.src;
+        });
+
+            
+    </script>
+    <script>
+        document.getElementById('searchForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+
+            // Diccionario de secciones y sus URLs correspondientes
+            const sections = {
+                'home': "{{ url_for('home') }}",
+                'about': "{{ url_for('about') }}",
+                'services': "{{ url_for('services') }}", 
+                'tipos de dietas': "{{ url_for('diet_types') }}",
+                'dietas simple': "{{ url_for('simple_diet') }}",
+                'dieta fitness': "{{ url_for('fitness_diet') }}"
+            };
+
+            if (sections[query]) {
+                window.location.href = sections[query];
+            } else {
+                alert('Sección no encontrada. Por favor, intenta nuevamente.');
+            }
+        });
+    </script>
+    {% endblock %}
+    <!-- Navbar End -->
+
+    {% if get_flashed_messages() %}
+    <header>
+        <div class="alert alert-primary border text-center" role="alert">
+            {{ get_flashed_messages() | join(" ") }}
+        </div>
+    </header>
+    {% endif %}
+
+    <div class="container p-5">
+        {% block content %} {% endblock %}
+    </div>
+
+    {% block footer %}
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <img src="static/img/logo2.png" class="logo">
+                    <p>Somos una empresa con objetivos de apoyar el bienestar nutricional de manera gratuita.</p>
+
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i
+                                class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-0" href=""><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Address</h4>
+                    <p><i class="fa fa-map-marker-alt me-3"></i>Managua, Nicaragua</p>
+                    <p><i class="fa fa-phone-alt me-3"></i>+505 77019829</p>
+                    <p><i class="fa fa-envelope me-3"></i>dunderalimentationcompany@gmail.com</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Quick Links</h4>
+                    <a class="btn btn-link" href="{{ url_for('about') }}">About Us</a>
+                    <a class="btn btn-link" href="{{ url_for('contact') }}">Contact Us</a>
+                    <a class="btn btn-link" href="{{ url_for('services') }}">Our Services</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Newsletter</h4>
+                    <p>contactanos</p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
+                            placeholder="Your email">
+                        <button type="button"
+                            class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a href="#">Dunder Mifflin Alimentation Company</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        Designed By <a href="https://htmlcodex.com"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i
+            class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='lib/wow/wow.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/easing/easing.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/counterup/counterup.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/parallax/parallax.min.js') }}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script>
+        document.getElementById('searchButton').addEventListener('click', function () {
+            var searchText = document.getElementById('searchInput').value.toLowerCase();
+            var sections = document.querySelectorAll('.container, .container-xxl');
+            for (var i = 0; i < sections.length; i++) {
+                var section = sections[i];
+                var sectionTitle = section.querySelector('h1, h2, h3, h4, h5, h6');
+                if (sectionTitle && sectionTitle.textContent.toLowerCase().includes(searchText)) {
+                    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    break;
+                }
+            }
+        });
+    </script>
+    {% block js %}{% endblock %}
+</body>
+
+</html>

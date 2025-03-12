@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}services{% endblock %}
+
+{% block css %}
+
+{{ super() }}
+{% endblock %}
+
+
+{% block content %}
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-8">
+                <div class="section-header text-start mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                    <h1 class="display-5 mb-3">Nuestros Servicios</h1>
+                    <p>Explora nuestra amplia gama de planes de dieta, recetas saludables, consejos de nutrición y testimonios de clientes para ayudarte a alcanzar tus objetivos de salud y bienestar.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4">
+            
+            <!-- Sección de Recetas Saludables -->
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="service-item bg-light rounded p-4">
+                    <div class="position-relative mb-4">
+                        <i class="fa fa-apple-alt fa-2x text-primary"></i>
+                        <h5 class="mt-4">Recetas Saludables</h5>
+                    </div>
+                    <p>Descubre recetas deliciosas y nutritivas para mantener tus comidas emocionantes y saludables.</p>
+                    <a class="small fw-medium" href="{{ url_for('healthy_recipes') }}">Más Información<i class="fa fa-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+
+            <!-- Sección de Consejos de Nutrición -->
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="service-item bg-light rounded p-4">
+                    <div class="position-relative mb-4">
+                        <i class="fa fa-heartbeat fa-2x text-primary"></i>
+                        <h5 class="mt-4">Consejos de Nutrición</h5>
+                    </div>
+                    <p>Obtén consejos y trucos de nutrición de expertos para ayudarte a mantener un estilo de vida saludable.</p>
+                    <a class="small fw-medium" href="{{ url_for('nutrition_tips') }}">Más Información<i class="fa fa-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

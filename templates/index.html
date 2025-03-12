@@ -1,0 +1,148 @@
+{% extends 'layout.html' %}
+{% block title %}Home{% endblock %}
+
+{% block css %}
+{{ super() }}
+
+{% endblock %}
+
+{% block head %} 
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+
+
+<!-- Carousel Start -->
+<div class="container-fluid p-0 mb-5 wow fadeIn" data-wow-delay="0.1s">
+    <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="w-100" src="static/img/carousel-1.jpg" alt="Image">
+                <div class="carousel-caption">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-7">
+                                <h1 class="display-2 mb-5 animated slideInDown">Dieta simple</h1>
+                                <a href="{{ url_for('simple_diet') }}" class="btn btn-primary rounded-pill py-sm-3 px-sm-5">Ver más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="w-100" src="static/img/carousel-2.jpg" alt="Image">
+                <div class="carousel-caption">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-7">
+                                    <h1 class="display-2 mb-5 animated slideInDown">Dieta Fitness</h1>
+                                    <a href="{{ url_for('fitness_diet') }}" class="btn btn-secondary rounded-pill py-sm-3 px-sm-5 ms-3">Ver más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
+                data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#header-carousel"
+                data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+    <!-- Carousel End -->
+
+<!-- About Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                <div class="about-img position-relative overflow-hidden p-5 pe-0">
+                    <img class="img-fluid w-100" src="static/img/si.jpeg">
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                <h1 class="display-5 mb-4">Aliméntate de manera saludable con los mejores</h1>
+                <p class="mb-4">Adopta una alimentación balanceada que se adapte a tus necesidades y preferencias. Con nuestros planes personalizados,
+                alcanzarás tus objetivos de forma saludable y efectiva.</p>
+                <p><i class="fa fa-check text-primary me-3"></i>Planes personalizados para tus objetivos</p>
+                <p><i class="fa fa-check text-primary me-3"></i>Recetas deliciosas y nutritivas</p>
+                <p><i class="fa fa-check text-primary me-3"></i>Asesoramiento nutricional profesional</p>
+                <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="{{ url_for('diet_types') }}">Ver más</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+
+
+<!-- services Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-8">
+                <div class="section-header text-start mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                    <h1 class="display-5 mb-3">Nuestros Servicios</h1>
+                    <p>Explora nuestra amplia gama de planes de dieta, recetas saludables, consejos de nutrición y testimonios de clientes para ayudarte a alcanzar tus objetivos de salud y bienestar.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4">
+            
+            <!-- Sección de Recetas Saludables -->
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="service-item bg-light rounded p-4">
+                    <div class="position-relative mb-4">
+                        <i class="fa fa-apple-alt fa-2x text-primary"></i>
+                        <h5 class="mt-4">Recetas Saludables</h5>
+                    </div>
+                    <p>Descubre recetas deliciosas y nutritivas para mantener tus comidas emocionantes y saludables.</p>
+                    <a class="small fw-medium" href="{{ url_for('healthy_recipes') }}">Más Información<i class="fa fa-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+
+            <!-- Sección de Consejos de Nutrición -->
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="service-item bg-light rounded p-4">
+                    <div class="position-relative mb-4">
+                        <i class="fa fa-heartbeat fa-2x text-primary"></i>
+                        <h5 class="mt-4">Consejos de Nutrición</h5>
+                    </div>
+                    <p>Obtén consejos y trucos de nutrición de expertos para ayudarte a mantener un estilo de vida saludable.</p>
+                    <a class="small fw-medium" href="{{ url_for('nutrition_tips') }}">Más Información<i class="fa fa-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- services End -->
+
+<!-- Firm Visit Start -->
+<div class="container-fluid bg-primary bg-icon mt-5 py-6">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-md-7 wow fadeIn" data-wow-delay="0.1s">
+                <h1 class="display-5 text-white mb-3">Consulta de Salud Personalizada</h1>
+                <p class="text-white mb-0">Obtén una consulta de salud personalizada con nuestros expertos en nutrición. Ya sea que estés buscando perder peso, ganar masa muscular, o simplemente mantener un estilo de vida saludable, estamos aquí para ayudarte a alcanzar tus objetivos.</p>
+            </div>
+            <div class="col-md-5 text-md-end wow fadeIn" data-wow-delay="0.5s">
+                <a class="btn btn-lg btn-secondary rounded-pill py-3 px-5" href="{{ url_for('contact') }}">Programa tu Consulta</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Firm Visit End -->
+{% endblock %}
+
+
+
+
+
+

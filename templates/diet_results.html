@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}Diet Results{% endblock %}
+
+{% block css %}
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+<div class="diet_results">
+    <h1 class="DietTitle">Resultados de la Dieta</h1>
+    {% if diet_plan %}
+        <div class="mt-5 diet_section">
+            <img src="static/img/imgA.png" alt="Diet Plan" class="img-fluid">
+            <h2>Tu Plan de Dieta</h2>
+            <ul class="list-group">
+                <li class="list-group-item">Calorías: {{ diet_plan.calories }}</li>
+                <li class="list-group-item">Proteínas: {{ diet_plan.protein }} g</li>
+                <li class="list-group-item">Carbohidratos: {{ diet_plan.carbs }} g</li>
+                <li class="list-group-item">Grasas: {{ diet_plan.fat }} g</li>
+            </ul>
+        </div>
+        <div class="mt-5 diet_section">
+            <img src="static/img/meal.jpeg" alt="Meal Plan" class="img-fluid">
+            <h3>Plan de Comidas</h3>
+            <ul class="list-group">
+                <li class="list-group-item">Desayuno: {{ diet_plan.breakfast }}</li>
+                <li class="list-group-item">Almuerzo: {{ diet_plan.lunch }}</li>
+                <li class="list-group-item">Merienda: {{ diet_plan.snack }}</li>
+                <li class="list-group-item">Cena: {{ diet_plan.dinner }}</li>
+            </ul>
+        </div>
+    {% else %}
+        <div class="alert alert-warning" role="alert">
+            No se encontró ningún plan de dieta.
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

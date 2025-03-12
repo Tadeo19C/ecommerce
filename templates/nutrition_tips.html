@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block title %}Consejos de Nutrición{% endblock %}
+
+
+{% block css %}
+{{ super() }} 
+{% endblock %}
+ 
+
+{% block content %} 
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="section-header text-center mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; margin: 0 auto;">
+            <h1 class="consejosTitle">Consejos de Nutrición</h1>
+            <p>Obtén consejos y trucos de nutrición para ayudarte a mantener un estilo de vida saludable.</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="nutrition-tip-item bg-light rounded p-4 text-center">
+                    <div class="position-relative mb-4">
+                        <i class="fa fa-carrot fa-2x text-primary position-absolute icon-centered"></i>
+                        <h5 class="mt-4 pt-2">Comer Más Vegetales</h5>
+                    </div>
+                    <p>Incorpora una variedad de vegetales en tu dieta para obtener una amplia gama de nutrientes.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="nutrition-tip-item bg-light rounded p-4 text-center">
+                    <div class="position-relative mb-4">
+                        <i class="fa fa-water fa-2x text-primary position-absolute icon-centered"></i>
+                        <h5 class="mt-4 pt-2">Mantenerse Hidratado</h5>
+                    </div>
+                    <p>Bebe suficiente agua cada día para mantener tu cuerpo bien hidratado y funcionando correctamente.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="nutrition-tip-item bg-light rounded p-4 text-center">
+                    <div class="position-relative mb-4">
+                        <i class="fa fa-apple-alt fa-2x text-primary position-absolute icon-centered"></i>
+                        <h5 class="mt-4 pt-2">Incorporar Frutas</h5>
+                    </div>
+                    <p>Las frutas son una excelente fuente de vitaminas, minerales y antioxidantes esenciales para la salud.</p>
+                </div>
+            </div>
+            <!-- Más consejos -->
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="nutrition-tip-item bg-light rounded p-4 text-center">
+                    <div class="position-relative mb-4">
+                        <i class="fa fa-fish fa-2x text-primary position-absolute icon-centered"></i>
+                        <h5 class="mt-4 pt-2">Consumir Pescado</h5>
+                    </div>
+                    <p>El pescado es una gran fuente de proteínas y ácidos grasos omega-3, que son beneficiosos para el corazón.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="nutrition-tip-item bg-light rounded p-4 text-center">
+                    <div class="position-relative mb-4">
+                        <i class="fa fa-seedling fa-2x text-primary position-absolute icon-centered"></i>
+                        <h5 class="mt-4 pt-2">Optar por Alimentos Integrales</h5>
+                    </div>
+                    <p>Elige granos integrales en lugar de refinados para obtener más fibra y nutrientes esenciales.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="nutrition-tip-item bg-light rounded p-4 text-center">
+                    <div class="position-relative mb-4">
+                        <i class="fa fa-dumbbell fa-2x text-primary position-absolute icon-centered"></i>
+                        <h5 class="mt-4 pt-2">Hacer Ejercicio Regularmente</h5>
+                    </div>
+                    <p>Combina una dieta saludable con ejercicio regular para mantener un peso adecuado y mejorar tu salud general.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

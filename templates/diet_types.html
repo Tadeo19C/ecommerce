@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block title %}Diet{% endblock %}
+
+
+{% block css %}
+{{ super() }} 
+{% endblock %}
+
+{% block content %}
+<!-- Page Header Start -->
+<div class="container-fluid page-header wow fadeIn" data-wow-delay="0.1s">
+    <div class="container">
+        <h1 class="display-3 mb-3 animated slideInDown">Tipos de dietas</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a class="text-body" href="{{ url_for('home') }}">Home</a></li>
+                <li class="breadcrumb-item"><a class="text-body" href="{{ url_for('nutrition_tips') }}">Consejos Nutricionales</a></li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Page Header End -->
+
+<!-- Feature Start -->
+<div class="container-fluid bg-light bg-icon py-6">
+    <div class="container">
+        <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+            <h1 class="display-5 mb-3">Tipos de dietas</h1>
+            <p style="text-align: justify;">Las dietas balanceadas ofrecen numerosos beneficios tanto para personas sanas como para quienes van al gimnasio. Incorporar frutas, verduras, proteínas magras y granos enteros proporciona nutrientes esenciales y energía sostenida. Para los entusiastas del gimnasio, estas dietas favorecen la recuperación muscular y mejoran el rendimiento físico. Además, elegir alimentos frescos y evitar los procesados contribuye a mantener un peso saludable, aumentar la vitalidad y reducir el riesgo de enfermedades crónicas.</p>
+        </div>
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="bg-white text-center h-100 p-4 p-xl-5">
+                    <img class="img-fluid mb-4" src="img/icon-1.png" alt="">
+                    <h4 class="mb-3">Dietas simples</h4>
+                    <p class="mb-4" style="text-align: justify;">Una dieta simple y saludable se basa en alimentos frescos y nutritivos, como frutas, verduras, proteínas magras y granos enteros. Evitar los productos ultraprocesados y las bebidas azucaradas, y optar por grasas saludables como las de aguacates y nueces, contribuye al bienestar general. Mantenerse hidratado con agua es fundamental para una buena salud.</p>
+                    <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="{{ url_for('simple_diet') }}">Ver más</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="bg-white text-center h-100 p-4 p-xl-5">
+                    <img class="img-fluid mb-4" src="img/icon-2.png" alt="">
+                    <h4 class="mb-3">Dietas Fitness</h4>
+                    <p class="mb-4" style="text-align: justify;">Un plan de alimentación para el gimnasio debe estar diseñado para proporcionar la energía necesaria para los entrenamientos, promover la recuperación muscular y apoyar los objetivos específicos de cada persona, ya sea ganar masa muscular, perder peso o mejorar la resistencia.</p>
+                    <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="{{ url_for('fitness_diet') }}">Ver más</a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<!-- Feature End -->
+{% endblock %}
+
+

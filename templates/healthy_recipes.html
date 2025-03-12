@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block title %}Recetas Saludables{% endblock %}
+
+
+{% block css %}
+{{ super() }} 
+{% endblock %}
+
+{% block content %} 
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="section-header text-center mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px; margin: 0 auto;">
+            <h1 class="titleRecipes">Recetas Saludables</h1>
+            <p>Descubre nuestras recetas saludables para mantener tus comidas emocionantes y nutritivas.</p>
+        </div>
+        <div class="row g-4">
+            <!-- Card 1 -->
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="card h-100">
+                    <img src="static/img/ensalada.jpg" class="card-img-top" alt="Ensalada de Quinoa">
+                    <div class="card-body">
+                        <h5 class="card-title">Ensalada de Quinoa</h5>
+                        <p class="card-text">Una deliciosa ensalada de quinoa con verduras frescas y aderezo de limón.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="card h-100">
+                    <img src="static/img/batido.jpg" class="card-img-top" alt="Batido de Frutas">
+                    <div class="card-body">
+                        <h5 class="card-title">Batido de Frutas</h5>
+                        <p class="card-text">Un refrescante batido de frutas lleno de vitaminas y antioxidantes.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="card h-100">
+                    <img src="static/img/sopa.jpg" class="card-img-top" alt="Sopa de Verduras">
+                    <div class="card-body">
+                        <h5 class="card-title">Sopa de Verduras</h5>
+                        <p class="card-text">Una sopa de verduras ligera y nutritiva, perfecta para cualquier comida.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="card h-100">
+                    <img src="static/img/tostada.jpg" class="card-img-top" alt="Tostadas de Aguacate">
+                    <div class="card-body">
+                        <h5 class="card-title">Tostadas de Aguacate</h5>
+                        <p class="card-text">Tostadas crujientes con aguacate, huevo y especias para un desayuno rápido y saludable.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 5 -->
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.9s">
+                <div class="card h-100">
+                    <img src="static/img/pasta.jpg" class="card-img-top" alt="Pasta Integral">
+                    <div class="card-body">
+                        <h5 class="card-title">Pasta Integral</h5>
+                        <p class="card-text">Pasta integral con salsa de tomate y albahaca fresca, una opción saludable y deliciosa.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 6 -->
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="1.1s">
+                <div class="card h-100">
+                    <img src="static/img/smothie.jpg" class="card-img-top" alt="Smoothie Verde">
+                    <div class="card-body">
+                        <h5 class="card-title">Smoothie Verde</h5>
+                        <p class="card-text">Un smoothie verde con espinacas, plátano y leche de almendras para un desayuno energético.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
